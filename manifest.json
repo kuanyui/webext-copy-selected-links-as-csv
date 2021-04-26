@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "Copy Links in Selection",
+    "version": "0.0.1",
+    "applications": {
+        "gecko": {
+            "id": "{52e9d6b3-169c-44f3-8884-1f136295293a}"
+        }
+    },
+    "description": "Copy all links in the selected area, which can be used as input of TTS reader.",
+    "icons": {
+        "256": "img/icon.png"
+    },
+    "browser_action": {
+      "default_icon": {
+        "256": "img/icon.png"
+      },
+      "default_title": "Copy Selected Links"
+    },
+    "background": {
+        "scripts": ["dist/background.js"]
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["dist/content.js"]
+        }
+    ],
+    "permissions": [ "tabs" ],
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+C"
+            },
+            "description": "Copy all links in current selected area."
+        }
+    }
+}
+
