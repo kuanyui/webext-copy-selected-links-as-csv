@@ -9,13 +9,20 @@
     },
     "description": "Copy all links in the selected area, which can be used as input of TTS reader.",
     "icons": {
-        "256": "img/icon.png"
+        "48": "img/icon_black.svg"
     },
     "browser_action": {
-      "default_icon": {
-        "256": "img/icon.png"
-      },
-      "default_title": "Copy Selected Links"
+        "default_icon": {
+            "48": "img/icon_dark.svg"
+        },
+        "default_title": "Copy Selected Links",
+        "theme_icons": [
+            {
+                "light": "img/icon_light.svg",
+                "dark":  "img/icon_dark.svg",
+                "size": 32
+            }
+        ]
     },
     "background": {
         "scripts": ["dist/background.js"]

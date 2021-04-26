@@ -1,0 +1,6 @@
+# 0.0.2
+- Fix `DOMException: Clipboard write was blocked due to lack of user activation.` for mobile
+- Make variant icons for dark / light themes
+
+# 0.0.1
+- init

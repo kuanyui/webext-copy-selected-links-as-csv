@@ -11,12 +11,8 @@ function copySelectedLinksIntoClipboard() {
     const links = getLinksFromSelection()
     if (links === null) { return }
     const formatted: string = links.map(x => `${x.href}`).join('\n')
-    if (location.protocol !== 'https:') {
-        alert('Note: due to the security limit of browser, only HTTPS page can copy text. Aborted.')
-    } else {
-        navigator.clipboard.writeText(formatted)
-        alert(`${links.length} link${links.length ? 's' : ''} copied!`)
-    }
+    navigator.clipboard.writeText(formatted)
+    alert(`${links.length} link${links.length ? 's' : ''} copied!`)
 }
 
 interface Link {
