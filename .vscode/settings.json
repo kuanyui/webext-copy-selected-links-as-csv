@@ -1,0 +1,8 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["manifest.json"],
+            "url": "./node_modules/ffext-manifest-schema/ffext.json",
+        }
+    ]
+}

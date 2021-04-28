@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Copy Links in Selection",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "applications": {
         "gecko": {
             "id": "{52e9d6b3-169c-44f3-8884-1f136295293a}"
@@ -13,14 +13,14 @@
     },
     "browser_action": {
         "default_icon": {
-            "48": "img/icon_dark.svg"
+            "16": "img/icon_mobile.svg"  // For Android only, because Android doens't support theme_icons
         },
         "default_title": "Copy Selected Links",
         "theme_icons": [
             {
                 "light": "img/icon_light.svg",
                 "dark":  "img/icon_dark.svg",
-                "size": 32
+                "size": 48
             }
         ]
     },

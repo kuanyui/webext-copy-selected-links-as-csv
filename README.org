@@ -1,9 +1,9 @@
-* Copy Selected Links
+* Copy Links in Selection
 A WebExtension which can running on Firefox for Android, specially designed for Android App [@Voice Aloud Reader (TTS Reader)](https://play.google.com/store/apps/details?id=com.hyperionics.avar).
 
 
 * Install
-- [[https://addons.mozilla.org/en-US/firefox/addon/copy-selected-links/][Mozilla Add-ons]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/copy-links-in-selection/][Mozilla Add-ons]]
 
 * Screenshot
 
