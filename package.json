@@ -1,6 +1,6 @@
 {
   "name": "copy-selected-links",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "WebExtension for Android Firefox",
   "main": "index.js",
   "scripts": {

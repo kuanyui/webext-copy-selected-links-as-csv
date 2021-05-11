@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Copy Links in Selection",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "applications": {
         "gecko": {
             "id": "{52e9d6b3-169c-44f3-8884-1f136295293a}"
