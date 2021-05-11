@@ -1,4 +1,5 @@
 import { TypedMsg } from "./common";
+import { Parser } from "json2csv"
 
 browser.runtime.onMessage.addListener((_ev: any) => {
     const ev = _ev as TypedMsg
@@ -10,19 +11,20 @@ browser.runtime.onMessage.addListener((_ev: any) => {
 function copySelectedLinksIntoClipboard() {
     const links = getLinksFromSelection()
     if (links === null) { return }
-    const formatted: string = links.map(x => `${x.href}`).join('\n')
+    // const formatted: string = links.map(x => `${x.link}`).join('\n')
+    const formatted: string = serializeToCsv(links)
     navigator.clipboard.writeText(formatted)
     alert(`${links.length} link${links.length ? 's' : ''} copied!`)
 }
 
-interface Link {
-    text: string
-    href: string
+interface Item {
+    title: string
+    link: string
 }
 
-function getLinksFromSelection(): Link[] | null {
+function getLinksFromSelection(): Item[] | null {
     const selection = window.getSelection()
-    const fin: Link[] = []
+    const fin: Item[] = []
     if (!selection) {
         alert('Please select text first!')
         return null
@@ -35,8 +37,8 @@ function getLinksFromSelection(): Link[] | null {
         for (var i = 0; i < links.length; i++) {
             const a = links[i] as HTMLLinkElement
             fin.push({
-                href: a.href,
-                text: a.innerText,
+                link: a.href,
+                title: a.innerText,
             })
         }
     }
@@ -45,4 +47,15 @@ function getLinksFromSelection(): Link[] | null {
         return null
     }
     return fin
+}
+
+function serializeToCsv(jsonObj: any): string {
+    try {
+        const parser = new Parser({})
+        const csv = parser.parse(jsonObj)
+        return csv
+    } catch (err) {
+        console.error(err)
+        return ''
+    }
 }

@@ -8,8 +8,12 @@
   },
   "author": "ono ono",
   "license": "WTFPL 2.0",
-  "dependencies": {},
+  "dependencies": {
+    "csv-stringify": "^5.6.2",
+    "json2csv": "^5.0.6"
+  },
   "devDependencies": {
+    "@types/json2csv": "^5.0.2",
     "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
